@@ -1,0 +1,17 @@
+[
+  {
+    "specialtyId": 1,
+    "specialty": "Компьютерная Безопасность",
+    "specialtyAbbreviation": "КБ"
+  },
+  {
+    "specialtyId": 2,
+    "specialty": "Прикладная Информатика",
+    "specialtyAbbreviation": "ПИ"
+  },
+  {
+    "specialtyId": 3,
+    "specialty": "ФИИТ",
+    "specialtyAbbreviation": "ФИИТ"
+  }
+]

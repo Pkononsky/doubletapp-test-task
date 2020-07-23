@@ -1,0 +1,26 @@
+[
+  {
+    "genderId": 1,
+    "gender": "Мужской"
+  },
+  {
+    "genderId": 2,
+    "gender": "Женский"
+  },
+  {
+    "genderId": 3,
+    "gender": "Боевой вертолет"
+  },
+  {
+    "genderId": 4,
+    "gender": "Сатанист"
+  },
+  {
+    "genderId": 5,
+    "gender": "Крестьянин"
+  },
+  {
+    "genderId": 6,
+    "gender": "Рабочий"
+  }
+]

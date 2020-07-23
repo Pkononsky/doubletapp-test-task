@@ -1,0 +1,40 @@
+{
+  "name": "doubletapp-pkononsky",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "npm-run-all start",
+    "build": "next build",
+    "start": "cross-env NODE_PATH=./server node ./server || echo started",
+    "deps:all": "npm ci",
+    "deps:production": "npm ci --production",
+    "heroku:login": "heroku container:login",
+    "heroku:push": "heroku container:push web -a doubletapp-pkononsky",
+    "heroku:release": "heroku container:release web -a doubletapp-pkononsky",
+    "heroku:open": "heroku open -a doubletapp-pkononsky",
+    "heroku:logs": "heroku logs --tail -a doubletapp-pkononsky",
+    "heroku": "npm-run-all heroku:*",
+    "heroku-init": "heroku login && heroku create doubletapp-pkononsky"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/cli": "^7.10.4",
+    "@babel/core": "^7.10.4",
+    "@babel/node": "^7.10.4",
+    "body-parser": "1.19.0",
+    "config": "3.3.0",
+    "cross-env": "7.0.2",
+    "express": "^4.17.1",
+    "jimp": "^0.14.0",
+    "next": "^9.4.4",
+    "pg": "^8.3.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-select": "^3.1.0",
+    "sequelize": "^6.3.3"
+  },
+  "devDependencies": {
+    "npm-run-all": "4.1.5"
+  }
+}

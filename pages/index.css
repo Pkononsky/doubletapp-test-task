@@ -1,0 +1,892 @@
+body {
+  margin: 0;
+  font-family: Arial, serif;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+p {
+  color: black;
+}
+
+@media screen and (min-device-width: 1140px) {
+  .main-container {
+    margin: 80px 0;
+  }
+
+  .header {
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+
+  .logo {
+    background: white;
+    display: grid;
+    grid-template-columns: 60px 100px 100px auto;
+    grid-template-rows: 80px;
+    text-decoration: none;
+    box-shadow: 0 0 20px lightgrey;
+  }
+
+  .logo__image {
+    grid-row: 1;
+    grid-column: 2 / 3;
+    margin: auto;
+    height: 50px;
+  }
+
+  .logo__text {
+    grid-row: 1;
+    grid-column: 3 / 4;
+    margin: auto;
+    font-weight: bold;
+  }
+
+  .list-content {
+    display: grid;
+    grid-template-columns: auto 400px 400px repeat(4, 90px) auto;
+    grid-template-rows: 150px 50px auto;
+  }
+
+  .list-content__list-name {
+    margin: auto auto auto 0;
+    grid-row: 1;
+    grid-column: 2 / 3;
+    font-weight: bold;
+    font-size: 200%;
+  }
+
+  .list-content__add-student-button {
+    grid-row: 1;
+    grid-column: 5 / 8;
+    border-radius: 10px;
+    background: deepskyblue;
+    display: flex;
+    margin: 50px 0;
+  }
+
+  .list-content__add-student-button-text {
+    font-weight: bold;
+    color: white;
+    margin: auto;
+  }
+
+  .list-content__name-search {
+    grid-row: 2;
+    grid-column: 2 / 5;
+    position: relative;
+  }
+
+  .list-content__name-search-img {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+
+  .list-content__name-search-input {
+    width: 100%;
+    height: 100%;
+    font-size: 100%;
+    padding: 0 25px 0 50px;
+    border: none;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+  }
+
+  .list-content__drop-list {
+    grid-row: 2;
+    grid-column: 6 / 8;
+  }
+
+  .list-content__drop-list,
+  .create-content__drop-list-specialty,
+  .create-content__drop-list-group,
+  .create-content__drop-list-gender,
+  .create-content__drop-list-color {
+    position: relative;
+    z-index: 1;
+  }
+
+  .list-content__drop-list-select {
+    appearance: none;
+    padding: 0 20px;
+    font-weight: bold;
+    width: 160px;
+    height: 100%;
+    margin-left: 20px;
+    border: none;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+  }
+
+  .list-content__drop-list-img {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    height: 20px;
+    pointer-events: none;
+  }
+
+  .create-content {
+    display: grid;
+    grid-template-columns: 60px 500px 500px auto;
+    grid-template-rows: 50px 80px 100px repeat(6, 90px);
+  }
+
+  .create-content__back-to-list-button {
+    display: flex;
+    margin-right: auto;
+    grid-row: 1;
+    grid-column: 2;
+  }
+
+  .create-content__back-to-list-arrow {
+    height: 20px;
+    margin: auto 0;
+  }
+
+  .create-content__back-to-list-button-text {
+    margin: auto auto auto 15px;
+    font-size: 13px;
+    font-weight: bold;
+  }
+
+  .create-content__new-student {
+    grid-row: 2;
+    grid-column: 2;
+    font-size: 250%;
+    font-weight: bold;
+    margin: auto auto auto 0;
+  }
+
+  .create-content__avatar {
+    grid-row: 3;
+    grid-column: 2;
+    display: flex;
+  }
+
+  .create-content__full-name {
+    grid-row: 4;
+    grid-column: 2;
+  }
+
+  .create-content__email {
+    grid-row: 5;
+    grid-column: 2;
+  }
+
+  .create-content__drop-list-specialty {
+    grid-row: 6;
+    grid-column: 2;
+  }
+
+  .create-content__drop-list-group {
+    grid-row: 7;
+    grid-column: 2;
+  }
+
+  .create-content__rating {
+    grid-row: 8;
+    grid-column: 2;
+  }
+
+  .create-content__drop-list-gender {
+    grid-row: 4;
+    grid-column: 3;
+  }
+
+  .create-content__age {
+    grid-row: 5;
+    grid-column: 3;
+  }
+
+  .create-content__drop-list-color {
+    display: flex;
+    flex-direction: column;
+    max-height: 500px;
+    grid-row: 6;
+    grid-column: 3;
+  }
+
+  .create-content__create-student-button {
+    grid-row: 9;
+    grid-column: 2;
+  }
+
+  .create-content__drop-list-specialty-select,
+  .create-content__drop-list-group-select,
+  .create-content__drop-list-gender-select {
+    font-size: 100%;
+    appearance: none;
+    padding: 0 20px;
+    width: 400px;
+    height: 40px;
+    border: none;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+  }
+
+  .create-content__full-name-input,
+  .create-content__email-input,
+  .create-content__rating-input,
+  .create-content__age-input {
+    appearance: none;
+    padding: 0 20px;
+    width: 360px;
+    height: 40px;
+    border: none;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    font-size: 100%
+  }
+
+  .create-content__drop-list-specialty-img,
+  .create-content__drop-list-group-img,
+  .create-content__drop-list-gender-img {
+    position: absolute;
+    right: 115px;
+    top: 60px;
+    height: 20px;
+    pointer-events: none;
+  }
+
+  .create-content__full-name-text,
+  .create-content__email-text,
+  .create-content__rating-text,
+  .create-content__age-text,
+  .create-content__drop-list-specialty-text,
+  .create-content__drop-list-group-text,
+  .create-content__drop-list-gender-text,
+  .create-content__drop-list-color-text {
+    font-weight: bold;
+  }
+
+  .create-content__avatar-texts {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .create-content__avatar-img {
+    height: 80px;
+    width: 80px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+    border-radius: 100%;
+  }
+
+  .create-content__avatar-change,
+  .create-content__avatar-size {
+    margin: 15px 0 0 15px;
+  }
+
+  .create-content__avatar-change {
+    text-decoration: underline black;
+    font-weight: bold;
+  }
+
+  .create-content__avatar-input {
+    display: none;
+  }
+
+  .create-content__create-student-button {
+    margin-top: auto;
+    width: 400px;
+    height: 40px;
+    border-radius: 10px;
+    background: deepskyblue;
+    display: flex;
+  }
+
+  .create-content__create-student-button-text {
+    font-weight: bold;
+    color: white;
+    margin: auto;
+  }
+
+  .default-option {
+    display: none;
+  }
+
+  .create-content__drop-list-color-images {
+    display: flex;
+  }
+
+  .create-content__drop-list-color-img {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    border-radius: 100%;
+    border: 3px solid black;
+  }
+
+  .create-content__drop-list-color-input,
+  .list-content__student-input {
+    display: none;
+  }
+
+  .create-content__drop-list-color-input:checked + .create-content__drop-list-color-img {
+    border: 3px solid blue;
+  }
+
+  .list-content__table {
+    grid-row: 3;
+    grid-column: 2 / 8;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .list-content__students {
+    box-shadow: 0 0 20px lightgrey;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .list-content__student {
+    display: grid;
+    grid-template-columns: auto 80px 300px 400px repeat(3, 90px) 45px 45px auto;
+    grid-template-rows: 70px;
+    font-weight: bold;
+  }
+
+  .list-content__student-avatar {
+    margin: auto auto auto 0;
+    grid-row: 1;
+    grid-column: 2;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%
+  }
+
+  .list-content__student-fullName {
+    margin: auto auto auto 0;
+    grid-row: 1;
+    grid-column: 3;
+  }
+
+  .list-content__student-specialty {
+    margin: auto auto auto 0;
+    grid-row: 1;
+    grid-column: 4;
+  }
+
+  .list-content__student-group {
+    margin: auto auto auto 0;
+    grid-row: 1;
+    grid-column: 5;
+  }
+
+  .list-content__student-age {
+    margin: auto auto auto 0;
+    grid-row: 1;
+    grid-column: 6;
+  }
+
+  .list-content__student-rating {
+    margin: auto auto auto 0;
+    grid-row: 1;
+    grid-column: 7;
+  }
+
+  .list-content__student-color {
+    margin: auto auto auto 0;
+    grid-row: 1;
+    grid-column: 8;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+  }
+
+  .list-content__student-delete {
+    margin: auto auto auto 0;
+    grid-row: 1;
+    grid-column: 9;
+  }
+
+  .list-content__student-delete-img {
+    border-radius: 100%;
+    box-shadow: 0 0 20px lightgrey;
+    width: 30px;
+    height: 30px;
+  }
+
+  .list-content__student-delete-img:hover {
+    box-shadow: 0 0 30px lightskyblue;
+  }
+
+  .list-content__columns {
+    display: grid;
+    grid-template-columns: auto 100px 300px 400px repeat(4, 90px) auto;
+    grid-template-rows: 50px;
+  }
+
+  .list-content__students-fullNames {
+    margin: auto auto auto 0;
+    grid-row: 1;
+    grid-column: 3;
+  }
+
+  .list-content__students-specialties {
+    margin: auto auto auto 0;
+    grid-row: 1;
+    grid-column: 4;
+  }
+
+  .list-content__students-groups {
+    margin: auto auto auto 0;
+    grid-row: 1;
+    grid-column: 5;
+  }
+
+  .list-content__students-ages {
+    margin: auto auto auto 0;
+    grid-row: 1;
+    grid-column: 6;
+  }
+
+  .list-content__students-ratings {
+    margin: auto auto auto 0;
+    grid-row: 1;
+    grid-column: 7;
+  }
+
+
+  .list-content__student-blue-dot-specialty,
+  .list-content__student-blue-dot-age,
+  .list-content__student-blue-dot-group,
+  .list-content__student-rating-star {
+    display: none;
+  }
+}
+
+@media (max-device-width: 1140px) {
+  .main-container {
+    width: 100%;
+    min-width: 500px;
+    margin: 80px 0;
+    padding: 0 40px;
+    justify-content: space-around;
+  }
+
+  .header {
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+
+  .logo {
+    margin: 0 -40px;
+    background: white;
+    display: grid;
+    grid-template-columns: 60px 100px 100px auto;
+    grid-template-rows: 80px;
+    text-decoration: none;
+    box-shadow: 0 0 20px lightgrey;
+  }
+
+  .logo__image {
+    grid-row: 1;
+    grid-column: 2 / 3;
+    margin: auto;
+    height: 50px;
+  }
+
+  .logo__text {
+    grid-row: 1;
+    grid-column: 3 / 4;
+    margin: auto;
+    font-weight: bold;
+  }
+
+  .list-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .list-content__list-name {
+    font-weight: bold;
+    font-size: 200%;
+  }
+
+  .list-content__add-student-button {
+    height: 50px;
+    width: 100%;
+    border-radius: 10px;
+    background: deepskyblue;
+    display: flex;
+  }
+
+  .list-content__add-student-button-text {
+    font-weight: bold;
+    color: white;
+    margin: auto;
+  }
+
+  .list-content__name-search {
+    width: 100%;
+    display: flex;
+    position: relative;
+    margin-top: 10px;
+    height: 50px;
+  }
+
+  .list-content__name-search-img {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+
+  .list-content__name-search-input {
+    flex-grow: 1;
+    height: 100%;
+    font-size: 100%;
+    padding: 0 25px 0 50px;
+    border: none;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+  }
+
+  .list-content__drop-list {
+    display: none;
+  }
+
+  .create-content__drop-list-specialty,
+  .create-content__drop-list-group,
+  .create-content__drop-list-gender,
+  .create-content__drop-list-color {
+    position: relative;
+    z-index: 1;
+  }
+
+  .create-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .create-content__back-to-list-button {
+    display: flex;
+    margin: 40px auto 20px 0;
+    grid-row: 1;
+    grid-column: 2;
+  }
+
+  .create-content__back-to-list-arrow {
+    height: 20px;
+    margin: auto 0;
+  }
+
+  .create-content__back-to-list-button-text {
+    margin: auto auto auto 15px;
+    font-size: 13px;
+    font-weight: bold;
+  }
+
+  .create-content__new-student {
+    font-size: 250%;
+    font-weight: bold;
+    margin: auto auto 20px 0;
+  }
+
+  .create-content__avatar {
+    display: flex;
+  }
+
+  .create-content__full-name {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .create-content__email {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .create-content__drop-list-specialty {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .create-content__drop-list-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .create-content__rating {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .create-content__drop-list-gender {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .create-content__age {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .create-content__drop-list-color {
+    display: flex;
+    flex-direction: column;
+    max-height: 500px;
+    grid-row: 6;
+    grid-column: 3;
+  }
+
+  .create-content__create-student-button {
+    display: flex;
+  }
+
+  .create-content__drop-list-specialty-select,
+  .create-content__drop-list-group-select,
+  .create-content__drop-list-gender-select {
+    appearance: none;
+    padding: 0 20px;
+    flex-grow: 1;
+    height: 40px;
+    border: none;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+  }
+
+  .create-content__full-name-input,
+  .create-content__email-input,
+  .create-content__rating-input,
+  .create-content__age-input {
+    appearance: none;
+    padding: 0 20px;
+    flex-grow: 1;
+    height: 40px;
+    border: none;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    font-size: 100%
+  }
+
+  .create-content__drop-list-specialty-img,
+  .create-content__drop-list-group-img,
+  .create-content__drop-list-gender-img {
+    position: absolute;
+    right: 15px;
+    top: 60px;
+    height: 20px;
+    pointer-events: none;
+  }
+
+  .create-content__full-name-text,
+  .create-content__email-text,
+  .create-content__rating-text,
+  .create-content__age-text,
+  .create-content__drop-list-specialty-text,
+  .create-content__drop-list-group-text,
+  .create-content__drop-list-gender-text,
+  .create-content__drop-list-color-text {
+    font-weight: bold;
+  }
+
+  .create-content__avatar-texts {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .create-content__avatar-img {
+    height: 80px;
+    width: 80px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+    border-radius: 100%;
+  }
+
+  .create-content__avatar-change,
+  .create-content__avatar-size {
+    margin: 15px 0 0 15px;
+  }
+
+  .create-content__avatar-change {
+    text-decoration: underline black;
+    font-weight: bold;
+  }
+
+  .create-content__avatar-input {
+    display: none;
+  }
+
+  .create-content__create-student-button {
+    margin-top: 20px;
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    background: deepskyblue;
+    display: flex;
+  }
+
+  .create-content__create-student-button-text {
+    font-weight: bold;
+    color: white;
+    margin: auto;
+  }
+
+  .default-option {
+    display: none;
+  }
+
+  .create-content__drop-list-color-images {
+    display: flex;
+  }
+
+  .create-content__drop-list-color-img {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    border-radius: 100%;
+    border: 3px solid black;
+  }
+
+  .create-content__drop-list-color-input,
+  .list-content__student-input {
+    display: none;
+  }
+
+  .create-content__drop-list-color-input:checked + .create-content__drop-list-color-img {
+    border: 3px solid blue;
+  }
+
+  .list-content__table {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .list-content__students {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .list-content__student {
+    box-shadow: 0 0 20px lightgrey;
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: 80px auto 80px;
+    grid-template-rows: 80px repeat(3, 40px);
+    margin-top: 20px;
+    font-weight: bold;
+  }
+
+  .list-content__student-separator {
+    grid-row: 1;
+    grid-column: 1 / 4;
+    border-bottom: 1px solid lightgrey;
+  }
+
+  .list-content__student-avatar {
+    margin: auto;
+    grid-row: 1;
+    grid-column: 1;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%
+  }
+
+  .list-content__student-fullName {
+    margin: 20px auto auto 0;
+    grid-row: 1;
+    grid-column: 2;
+  }
+
+  .list-content__student-blue-dot-specialty,
+  .list-content__student-blue-dot-age,
+  .list-content__student-blue-dot-group {
+    width: 10px;
+    height: 10px;
+  }
+
+  .list-content__student-specialty {
+    margin: auto auto auto 0;
+    grid-row: 3;
+    grid-column: 2;
+  }
+
+  .list-content__student-blue-dot-specialty {
+    margin: auto 10px auto auto;
+    grid-row: 3;
+    grid-column: 1;
+  }
+
+  .list-content__student-group {
+    margin: auto auto auto 0;
+    grid-row: 4;
+    grid-column: 2;
+  }
+
+  .list-content__student-blue-dot-group {
+    margin: auto 10px auto auto;
+    grid-row: 4;
+    grid-column: 1;
+  }
+
+  .list-content__student-age {
+    margin: auto auto auto 0;
+    grid-row: 2;
+    grid-column: 2;
+  }
+
+  .list-content__student-blue-dot-age {
+    margin: auto 10px auto auto;
+    grid-row: 2;
+    grid-column: 1;
+  }
+
+  .list-content__student-rating {
+    margin: auto auto 20px 50px;
+    width: 15px;
+    height: 15px;
+    grid-row: 1;
+    grid-column: 2;
+  }
+
+  .list-content__student-rating-star {
+    width: 15px;
+    height: 15px;
+    margin: auto auto 20px 25px;
+    grid-row: 1;
+    grid-column: 2;
+  }
+
+  .list-content__student-color {
+    margin: auto auto 20px 0;
+    grid-row: 1;
+    grid-column: 2;
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+  }
+
+  .list-content__student-delete {
+    margin: auto;
+    grid-row: 1;
+    grid-column: 3;
+  }
+
+  .list-content__student-delete-img {
+    border-radius: 100%;
+    box-shadow: 0 0 20px lightgrey;
+    width: 30px;
+    height: 30px;
+  }
+
+  .list-content__student-delete-img:hover {
+    box-shadow: 0 0 30px lightskyblue;
+  }
+
+  .list-content__columns {
+    display: none;
+  }
+}
