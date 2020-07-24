@@ -97,6 +97,10 @@ export default class IndexPage extends Component {
     render() {
         const {specialtyList, groupList, genderList, colorList} = this.state;
 
+        const {avatar, fullName, email, rating, age, specialtyId, groupNumId, genderId, favoriteColorId} = this.state;
+
+        const allSelected = avatar && fullName && email && rating && age && specialtyId && groupNumId && genderId && favoriteColorId;
+
         return (
             <main className="main-container">
                 <Logo/>
@@ -133,13 +137,14 @@ export default class IndexPage extends Component {
                            text="Рейтинг"
                            placeHolder="0"
                            stateProp={RATING}
+                           isInt={true}
                            handler={this._handleInputChange.bind(this)}/>
                     <Input className="create-content__age"
                            text="Возраст"
                            placeHolder="0"
                            stateProp={AGE}
+                           isInt={true}
                            handler={this._handleInputChange.bind(this)}/>
-
 
                     <DropDownList className="create-content__drop-list-specialty"
                                   text="Специальность"
@@ -165,14 +170,19 @@ export default class IndexPage extends Component {
                                  stateProp={FAVORITE_COLOR_ID}
                                  handler={this._handleInputChange.bind(this)}/>
 
-                    <Link as="/" href={{pathname: '/studentsList'}}>
-                        <a className="create-content__create-student-button"
-                           onClick={this._sendToDataBase.bind(this)}>
-                            <p className="create-content__create-student-button-text">
-                                Создать
-                            </p>
-                        </a>
-                    </Link>
+                    {
+                        allSelected ?
+                        <Link as="/" href={{pathname: '/studentsList'}}>
+                            <a className="create-content__create-student-button"
+                               onClick={this._sendToDataBase.bind(this)}>
+                                <p className="create-content__create-student-button-text">
+                                    Создать
+                                </p>
+                            </a>
+                        </Link>
+                        :
+                        null
+                    }
                 </div>
             </main>
         )

@@ -25,7 +25,7 @@ export default function DropDownList({className, text, listOptions, img, statePr
 
             <select className={`${className}-select`} onChange={handleChange}>
                 <option value="" disabled selected
-                        className={`${className}-option default-option`}>{listOptions[0]?.data}</option>
+                        className={`${className}-option default-option`}>Выбрать</option>
                 {
                     listOptions.map(option => <option className={`${className}-option`} key={option.id}
                                                       id={option.id}>{option.data}</option>)

@@ -1,8 +1,23 @@
 import React from 'react';
 
-export default function Input({className, text, placeHolder, stateProp, handler}) {
+let inputClass = 'input';
+const WRONG_VALUE_CLASS = ' red-border';
+
+export default function Input({className, text, placeHolder, stateProp, handler, isInt}) {
+
     function handleChange(event) {
-        handler({[stateProp]: event.target.value});
+        const value = event.target.value;
+        if (isInt) {
+            if (!isNaN(parseInt(value))) {
+                event.target.className = `${className}-${inputClass}`;
+                handler({[stateProp]: value});
+            } else {
+                event.target.className += WRONG_VALUE_CLASS;
+                handler({[stateProp]: ''});
+            }
+        } else {
+            handler({[stateProp]: value});
+        }
     }
 
     return (
@@ -10,7 +25,8 @@ export default function Input({className, text, placeHolder, stateProp, handler}
             <p className={`${className}-text`}>
                 {text}
             </p>
-            <input type="text" className={`${className}-input`} placeholder={placeHolder} onChange={handleChange}/>
+            <input type="text" className={`${className}-${inputClass}`} placeholder={placeHolder}
+                   onChange={handleChange}/>
         </div>
     )
 }

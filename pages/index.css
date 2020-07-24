@@ -241,7 +241,7 @@ p {
     padding: 0 20px;
     width: 360px;
     height: 40px;
-    border: none;
+    border: 1px solid white;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
     border-radius: 4px;
     font-size: 100%
@@ -463,6 +463,10 @@ p {
   .list-content__student-rating-star {
     display: none;
   }
+
+  .red-border {
+    border: 1px solid red;
+  }
 }
 
 @media (max-device-width: 1140px) {
@@ -667,7 +671,7 @@ p {
     padding: 0 20px;
     flex-grow: 1;
     height: 40px;
-    border: none;
+    border: 1px solid white;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
     border-radius: 4px;
     font-size: 100%
@@ -888,5 +892,9 @@ p {
 
   .list-content__columns {
     display: none;
+  }
+
+  .red-border {
+    border: 1px solid red;
   }
 }
