@@ -14,8 +14,8 @@ npm i
 
 npm run dev
 
-
 для запуска на heroku:
+
 установить и запустить - VirtualBox и Docker ToolBox 
 
 заменить doubletapp-pkononsky в package.json на другое желаемое название
