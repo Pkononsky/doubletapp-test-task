@@ -4,7 +4,7 @@ https://doubletapp-pkononsky.herokuapp.com/
 
 для запуска:
 создать базу данных PostgreSQL (например облачную ElephantSQL) и изменить соответствующие значения sequelizeOptions в файлах папки config,
-добавить переменную окружения TAP_PASSWORD со значением пароля от бд
+добавить переменную окружения TAP_PASSWORD со значением пароля от БД
 
 для запуска локально:
 
@@ -22,6 +22,8 @@ npm run dev
 выполнить команды:
 
 npm i
+
+heroku config:set TAP_PASSWORD=*пароль от БД*
 
 npm run build
 
