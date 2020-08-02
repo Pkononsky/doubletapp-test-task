@@ -24,13 +24,26 @@ p {
     width: 100%;
   }
 
-  .logo {
+  .logo__block {
+    display: flex;
     background: white;
+    box-shadow: 0 0 20px lightgrey;
+    font-weight: bold;
+  }
+
+  .logo__by {
+    margin: auto 0;
+  }
+
+  .logo__git-ref {
+    margin: auto 7px;
+  }
+
+  .logo {
     display: grid;
-    grid-template-columns: 60px 100px 100px auto;
+    grid-template-columns: 60px 100px 100px;
     grid-template-rows: 80px;
     text-decoration: none;
-    box-shadow: 0 0 20px lightgrey;
   }
 
   .logo__image {
@@ -507,6 +520,11 @@ p {
     grid-column: 3 / 4;
     margin: auto;
     font-weight: bold;
+  }
+
+  .logo__by,
+  .logo__git-ref {
+    display: none;
   }
 
   .list-content {
