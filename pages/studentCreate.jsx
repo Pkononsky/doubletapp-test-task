@@ -69,7 +69,8 @@ export default class IndexPage extends Component {
             method: 'POST'
         })
             .then((res) => {
-                res.status === 200 ? alert(CREATE_SUCCESS) : alert(CREATE_ERROR)
+                res.status === 200 ? alert(CREATE_SUCCESS) : alert(CREATE_ERROR);
+                this.setState();
             })
     }
 
